@@ -1,12 +1,11 @@
 package com.example.srpingbootrestcrud1employeemangament.controller;
 
+import com.example.srpingbootrestcrud1employeemangament.dto.EmployeeDTO;
 import com.example.srpingbootrestcrud1employeemangament.entity.Employee;
 
 import com.example.srpingbootrestcrud1employeemangament.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,4 +24,24 @@ public class EmployeeRestController {
     public List<Employee> findAll() {
         return employeeService.findAll();
     }
-}
+
+    @GetMapping("/employee/{employeeId}")
+    public Employee getEmployee(@PathVariable int employeeId) {
+
+        Employee employee = employeeService.findById(employeeId);
+        if (employee == null){
+            throw new RuntimeException("Employee id is not found "+ employeeId);
+        }
+
+        return employee;
+    }
+
+    @PostMapping("/employee/addEmployee")
+    public Employee addEmployee(@RequestBody EmployeeDTO employeeDTO){
+
+        return employeeService.save(employeeDTO);
+    }
+
+    }
+
+
