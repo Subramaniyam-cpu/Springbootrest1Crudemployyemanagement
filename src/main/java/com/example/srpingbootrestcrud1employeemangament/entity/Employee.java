@@ -1,4 +1,4 @@
-package com.example.srpingbootrestcrud1employeemangament.repository;
+package com.example.srpingbootrestcrud1employeemangament.entity;
 
 
 import lombok.Getter;

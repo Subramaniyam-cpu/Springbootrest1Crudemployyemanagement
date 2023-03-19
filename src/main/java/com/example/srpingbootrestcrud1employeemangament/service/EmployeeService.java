@@ -1,10 +1,10 @@
-package com.example.srpingbootrestcrud1employeemangament.repository;
+package com.example.srpingbootrestcrud1employeemangament.service;
 
 import com.example.srpingbootrestcrud1employeemangament.entity.Employee;
 
 import java.util.List;
 
-public interface EmployeeDAO {
+public interface EmployeeService {
 
     List<Employee> findAll();
 }

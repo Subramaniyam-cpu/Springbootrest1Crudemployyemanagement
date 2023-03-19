@@ -1,5 +1,6 @@
 package com.example.srpingbootrestcrud1employeemangament.repository;
 
+import com.example.srpingbootrestcrud1employeemangament.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
