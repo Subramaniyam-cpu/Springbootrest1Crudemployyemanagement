@@ -42,6 +42,17 @@ public class EmployeeRestController {
         return employeeService.save(employeeDTO);
     }
 
+    @PutMapping("/employee")
+    public Employee updateEmployee(@RequestBody EmployeeDTO employeeDTO){
+        return employeeService.save(employeeDTO);
+    }
+
+    @DeleteMapping("/employee/{emp_id}")
+    public String deleteEmployee(@PathVariable int emp_id){
+
+
+        return employeeService.deleteById(emp_id);
+    }
     }
 
 
